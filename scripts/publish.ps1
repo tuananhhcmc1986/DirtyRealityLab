@@ -4,7 +4,7 @@ param(
 
 Write-Host "Publishing Reality $id..."
 
-$draft = "draft/reality/$id"
+$draft = "draft/$id"
 $public = "reality/$id"
 
 New-Item -ItemType Directory -Force -Path $public | Out-Null
