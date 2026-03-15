@@ -1,0 +1,33 @@
+Dirty Reality Lab Publishing Rules
+
+1. All research must start in:
+
+/draft/reality/{id}/
+
+2. Draft folders may contain:
+
+summary.md
+whitepaper_source.md
+whitepaper.pdf
+diagrams/*.svg
+
+3. Public website content must live in:
+
+/reality/{id}/
+
+4. Public folders may only contain:
+
+index.html
+summary.html
+whitepaper.pdf
+diagrams/*.svg
+
+5. Never publish markdown files to the public site.
+
+6. Markdown must be converted to HTML before publishing.
+
+7. The publishing process copies files from:
+
+draft → reality
+
+8. Homepage must only link to published realities.
