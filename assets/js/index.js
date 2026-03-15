@@ -1,6 +1,6 @@
 async function loadReality(){
 
-    const res = await fetch("/reality/index.json")
+    const res = await fetch("./reality/index.json")
     const data = await res.json()
     
     const latest = data[data.length - 1]
