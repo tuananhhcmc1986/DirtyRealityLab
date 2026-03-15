@@ -130,3 +130,21 @@
     }
     
     }
+    .dmca-badge{
+
+        margin-top:10px;
+        
+        }
+        
+        .dmca-badge img{
+        
+        height:24px;
+        opacity:0.8;
+        
+        }
+        
+        .dmca-badge img:hover{
+        
+        opacity:1;
+        
+    }
