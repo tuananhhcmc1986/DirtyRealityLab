@@ -7,12 +7,15 @@ async function loadReality(){
     
     const latest = data[data.length - 1]
     
+    // format id -> 01, 02
+    const latestId = String(latest.id).padStart(2,'0')
+    
     const latestBox = document.getElementById("latestReality")
     
     latestBox.innerHTML = `
     <strong>Reality #${latest.id}</strong><br>
     ${latest.title}<br>
-    <a href="./reality/${latest.id}/">Read →</a>
+    <a href="./reality/${latestId}/">Read →</a>
     `
     
     const indexBox = document.getElementById("realityIndex")
@@ -21,10 +24,12 @@ async function loadReality(){
     
     data.forEach(r => {
     
+    const rid = String(r.id).padStart(2,'0')
+    
     html += `
     <p>
     #${r.id}
-    <a href="./reality/${r.id}/">
+    <a href="./reality/${rid}/">
     ${r.title}
     </a>
     </p>
