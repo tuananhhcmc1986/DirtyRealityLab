@@ -31,3 +31,58 @@ diagrams/*.svg
 draft → reality
 
 8. Homepage must only link to published realities.
+
+9. Every published reality page (reality/{id}/index.html) must include Google Analytics tracking in <head>:
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00DD2QNWWZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-00DD2QNWWZ');
+</script>
+
+This is already included in reality_template.html — no manual action needed when using the publish script.
+
+10. Every published reality page (reality/{id}/index.html) must include a subscribe form before the footer, using the template below. The form sends data to Google Sheets via Apps Script with source=lab.dirtyreality.net.
+
+Subscribe form HTML (insert before <div class="footer">):
+
+<hr>
+
+<div class="subscribe-wrapper">
+<div class="subscribe-label">Get new research delivered to your inbox.</div>
+<form class="subscribe-form" onsubmit="handleSubscribe(event)">
+    <input type="email" class="subscribe-input" placeholder="email@example.com" required>
+    <button type="submit" class="subscribe-btn">Subscribe</button>
+</form>
+<div class="subscribe-msg"></div>
+</div>
+
+<hr>
+
+Subscribe JS (insert before </body>):
+
+<script>
+function handleSubscribe(e) {
+  e.preventDefault();
+  var form = e.target;
+  var email = form.querySelector('input').value;
+  var msg = form.parentElement.querySelector('.subscribe-msg');
+  var btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = '...';
+  var url = 'https://script.google.com/macros/s/AKfycbxMbWXIe56bCpGt3oywPv_6NU8FH-UkMgkHbut3fxvneMF905yT4fKP9JLSlygbofNIhA/exec?email=' + encodeURIComponent(email) + '&source=lab.dirtyreality.net';
+  fetch(url, { mode: 'no-cors' })
+    .then(function() {
+      form.style.display = 'none';
+      msg.textContent = 'Subscribed! Thank you.';
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      msg.textContent = 'Something went wrong. Please try again.';
+    });
+}
+</script>

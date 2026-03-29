@@ -130,10 +130,62 @@
     }
     
     }
+    /* =========================
+   SUBSCRIBE FORM
+   ========================= */
+
+.subscribe-wrapper{
+margin:40px 0;
+}
+
+.subscribe-label{
+font-size:13px;
+color:var(--muted);
+margin-bottom:16px;
+letter-spacing:0.5px;
+}
+
+.subscribe-form{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.subscribe-input{
+flex:1;
+min-width:200px;
+padding:10px 14px;
+border:1px solid var(--border);
+background:var(--bg);
+color:var(--text);
+font-family:inherit;
+font-size:14px;
+}
+
+.subscribe-btn{
+padding:10px 20px;
+background:var(--text);
+color:var(--bg);
+border:none;
+cursor:pointer;
+font-family:inherit;
+font-size:14px;
+}
+
+.subscribe-btn:hover{opacity:0.8;}
+.subscribe-btn:disabled{opacity:0.5;cursor:not-allowed;}
+
+.subscribe-msg{
+font-size:13px;
+color:var(--muted);
+margin-top:12px;
+min-height:1.2em;
+}
+
     .dmca-badge{
 
         margin-top:10px;
-        
+
         }
         
         .dmca-badge img{
