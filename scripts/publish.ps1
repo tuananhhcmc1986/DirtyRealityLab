@@ -61,7 +61,7 @@ $summary = Get-Content "$public/summary.html" -Raw -Encoding UTF8
 
 # -------------------------
 # load template
-# GA tracking (G-00DD2QNWWZ) and subscribe form are included in the template
+# GA tracking (G-SHC80VT5RE) and subscribe form are included in the template
 # -------------------------
 $template = Get-Content "templates/reality_template.html" -Raw -Encoding UTF8
 

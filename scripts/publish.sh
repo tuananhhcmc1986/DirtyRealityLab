@@ -22,7 +22,7 @@ if (Test-Path "$draft/diagrams") {
 # convert markdown → html
 pandoc "$draft/summary.md" -o "$public/summary.html"
 
-# GA tracking (G-00DD2QNWWZ) and subscribe form are included in the template
+# GA tracking (G-SHC80VT5RE) and subscribe form are included in the template
 $summary = Get-Content "$public/summary.html" -Raw
 $template = Get-Content "templates/reality_template.html" -Raw
 

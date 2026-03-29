@@ -97,12 +97,12 @@ Every generated `reality/{id}/index.html` must include:
 - Google Analytics tag:
 ```html
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-00DD2QNWWZ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHC80VT5RE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-00DD2QNWWZ');
+  gtag('config', 'G-SHC80VT5RE');
 </script>
 ```
 
